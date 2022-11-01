@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@500;600;700&display=swap');
+
+:root {
+    --primary-color: hsl(25, 97%, 53%);
+    --light-grey: hsl(217, 12%, 63%);
+    --medium-grey: hsl(216, 12%, 54%);
+    --dark-blue: hsl(213, 19%, 18%);
+    --very-dark-blue: hsl(216, 12%, 8%)
+}
+
+body {
+    font-family: 'Overpass', 'sans-serif';
+    margin: 0;
+    padding: 0;
+    background-color: var(--very-dark-blue);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    height: 400px;
+    width: 400px;
+    border-radius: 30px;
+    background: linear-gradient(355deg, rgba(23,30,40,1) 0%, rgba(29,36,46,1) 100%);
+}
+.card .star {
+    background-color: #262f38;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.card .content {
+    padding: 30px;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+}
+
+.card .content .text {
+    margin-top: 20px;
+}
+
+.card .content .text h1 {
+    font-size: 2.0rem;
+    color: white;
+    font-weight: 500;
+    margin: 0;
+}
+
+.card .content .text p {
+    margin-top: 20px;
+    font-size: 14px;
+    color: var(--medium-grey);
+    font-weight: 500;
+    line-height: 20px;
+    /* letter-spacing: 0.2px; */
+}
+
+.card .content .buttons {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.buttons > * {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    background-color: #262f38;
+    color: var(--light-grey);
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.buttons > *:hover {
+    background-color: var(--medium-grey);
+    color: white;
+    transition: all 0.3s ease-in-out;
+}
+
+.card .content .submit {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card .content .submit #submit{
+    width: 100%;
+    height: 45px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    background-color: var(--primary-color);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: white;
+    font-weight: 600;
+    transition: all 0.3s ease-in-out;
+}
+
+.card .content .submit #submit:hover{
+    background-color: white;
+    color: var(--primary-color);
+    /* transition in and out of hover */
+    transition: all 0.3s ease-in-out;
+}
+
+.is-active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.is-active:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.card .result {
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction:column;
+}
+
+.card .result .show-choice {
+    margin-top: 20px;
+    color: var(--primary-color);
+    background-color: var(--dark-blue);
+    border-radius: 20px;
+    width: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+}
+.card .result .show-choice p {
+    margin: 0;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.card .result .text {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card .result .text h1{
+    color: white;
+    font-size: 1.8rem;
+}
+
+.card .result .text p{
+    color: var(--medium-grey);
+    text-align: justify;
+    margin-bottom: 0;
+    font-size: 1rem;
+    height: 40px;
+}
+
+.card .result .text #text:after{
+    content: "";
+    display: inline-block;
+    width: 100%;
+}
+.card .result .text #text-center {
+    margin: 0;
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="./style.css">
+  <title>Frontend Mentor | Interactive rating component</title>
+</head>
+<body>
+  <div class="card">
+    <div class="content" style="display:flex;">
+      <div class="star">
+        <img src="./images/icon-star.svg" alt="star">
+      </div>
+      <div class="text">
+        <h1>How did we do?</h1>
+        <p>Please let us know how we did with your support request. All feedback is appreciated to help us improve our offering!</p>
+      </div>
+      <div class="buttons">
+        <button onclick="handleButton(this)">1</button>
+        <button onclick="handleButton(this)">2</button>
+        <button onclick="handleButton(this)">3</button>
+        <button onclick="handleButton(this)">4</button>
+        <button onclick="handleButton(this)">5</button>
+      </div>
+      <div class="submit">
+        <button id="submit" onclick="handleSubmit()">Submit</button>
+      </div>
+    </div>
+    <div class="result" style="display:none;">
+      <div class="picture">
+        <img src="./images/illustration-thank-you.svg">
+      </div>
+      <div class="show-choice">
+        <p>You selected 4 out of 5</p>
+      </div>
+      <div class="text">
+        <h1>Thank you!</h1>
+        <p id="text">We appreciate you taking the time to give a rating. If you ever need more support, don't</p><p id="text-center">hesitate to get in touch!</p>
+      </div>
+    </div>
+  </div>
+  <script>
+    const buttons = document.querySelectorAll('button');
+    const handleButton = (button) => {
+      buttons.forEach((btn) => {
+        btn.classList.remove('is-active');
+      });
+      button.classList.add('is-active');
+    }
+    
+    const handleSubmit = () => {
+      const content = document.querySelector('.content');
+      const result = document.querySelector('.result');
+      const showChoice = document.querySelector('.show-choice');
+
+      if (!document.querySelector('.is-active')) {
+        return;
+      }
+
+      content.style.display = 'none';
+      result.style.display = 'flex';
+      showChoice.innerHTML = `<p>You selected ${document.querySelector('.is-active').innerHTML} out of 5</p>`;
+    }
+  </script>
+</body>
+</html>
